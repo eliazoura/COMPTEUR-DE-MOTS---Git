@@ -10,10 +10,9 @@ monTxtZone.addEventListener("click",erase);
 let content = monTxtZone.innerHTML;
 console.log('content HTML de MontxtZone: ', content);
 
-let remplace="Avec cette application en ligne vous pouvez compter les mots, espâces, les ponctuations et pleins d'autres choses compter. Cliquez ici pour commencer"
+let remplace="Avec cette application en ligne vous pouvez compter les mots, les signes (caractères invisibles inclus), les ponctuations. D'autres fonctionnalités sont en cours de développement. Cliquez dans cette zone pour commencer commencer"
 
 monTxtZone.textContent=remplace;
-
 
 
 let myReset = document.getElementById("reset");
@@ -46,11 +45,21 @@ console.log('******************');
 // /////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////
 
+        //////////////////////////////////////////////////////
+        //////////////////  LE COMPTEUR   //////////////////
+        //////////////////////////////////////////////////////
+
 function compteur(){
 
 
                 let lesChar=monTxtZone.value;
-                //console.log('lesMots typeof: ', typeof lesMots);
+                let contChar=lesChar.length;
+                let lesCharMinuSpaces=lesChar.trim().length;
+                let dif=contChar-lesCharMinuSpaces;
+console.log('✌️difference entre les 2 --->', dif);
+console.log('✌️lesCharMinuSpaces --->', lesCharMinuSpaces);
+
+                
    
 // calcul nombre de caracteres
                 let long=lesChar.length;
@@ -69,12 +78,15 @@ function compteur(){
 
     
 }
+// ###########################################################
+// ##################   LES FONCTIONS   ######################
+// ###########################################################
 
-function initializ(monTxtZone){
+function initializ(){
 
-    monTxtZone.textContent="C'est reparti !";
+                                 monTxtZone.textContent="C'est reparti !";
     
-    }
+                             }
 
     function erase(){
 
@@ -88,3 +100,83 @@ function initializ(monTxtZone){
 
                        this.toString();
                           }
+
+
+
+// ###########################################################
+// ##################                   ######################
+// ###########################################################
+
+
+// AJOUT DE LA FONCTION DETECTION DE DOUBLONS
+let display=document.getElementById("info");
+
+
+let myPhrase=monTxtZone; 
+
+
+let stringArray = myPhrase.trim().split(" ");
+let long=stringArray.length;
+console.log("StringArray",stringArray);
+stringArray.forEach((a) => console.log("voici un des élements", a));
+
+let newPhrase=[];
+console.table(stringArray)
+
+console.log("display",display);
+
+stringArray.forEach((i) => console.log("Pour i=",i));
+
+
+for (let i= 0; i<=long;i++)
+		if (stringArray[i]==stringArray[i+1] )
+		{ disDble(i);
+		                 
+                  }
+                              
+//let myProtoString1= Object.getPrototypeOf(stringArray);
+//console.log("Prototype de la phrase tableau", myProtoString1)
+
+//let string = "Bonjour je   suis dans l'attente d'un e    //pharse   sans contexte    ";
+//
+//let string1=string.trim()
+//
+//
+//let myProtoString2= Object.getPrototypeOf(string1);
+//
+//console.log("myProtoString2",myProtoString2);
+
+
+
+// var string2 = string1.split();
+// 
+// console.log("TYPE OF string2", typeof string2);
+// 
+// let myProto= Object.getPrototypeOf(string2);
+// 
+// console.log("myProto",myProto);
+
+
+function disDble(i){
+
+	let iChar = i.toString();
+
+	display.textContent+=" --- Possibilité d'espaces doubles en position : " + iChar;
+
+newPhrase[i]="Possibilité de CHAR doubles en position i";
+		 console.log(i, newPhrase[i]);
+        
+
+}
+
+
+//let stringTrim=string2.trim();
+
+console.log("========== STRING SPLIT ==================");
+
+console.log(string2);
+
+
+
+
+
