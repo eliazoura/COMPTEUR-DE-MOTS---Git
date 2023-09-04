@@ -4,6 +4,7 @@ let monTxtZone = document.getElementById("mazone");
 console.log('monTxtZone: ', monTxtZone);
 monTxtZone.addEventListener("click",erase);
 
+//
 let latotale=document.documentElement.textContent;
 //console.log('latotale: ', latotale);
 
