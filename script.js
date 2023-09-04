@@ -117,8 +117,7 @@ function disDble(i){
 
 	let iChar = i.toString();
 
-	display.textContent+=" --- Possibilité d'espaces doubles en 
-position : " + iChar;
+	display.textContent+=" --- Possibilité d'espaces doubles en position : " + iChar;
 
 newPhrase[i]="Possibilité de signes doubles en position i";
 		 console.log(i, newPhrase[i]);
