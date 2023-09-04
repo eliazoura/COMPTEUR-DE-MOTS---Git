@@ -4,7 +4,7 @@ let monTxtZone = document.getElementById("mazone");
 console.log('monTxtZone: ', monTxtZone);
 monTxtZone.addEventListener("click",erase);
 
-//let latotale=document.documentElement.textContent;
+let latotale=document.documentElement.textContent;
 //console.log('latotale: ', latotale);
 
 let content = monTxtZone.innerHTML;
@@ -79,7 +79,7 @@ console.log('✌️lesCharMinuSpaces --->', lesCharMinuSpaces);
     
 }
 // ###########################################################
-// ##################   LES FONCTIONS   ######################
+// ##################   INITIALISER     ######################
 // ###########################################################
 
 function initializ(){
@@ -88,18 +88,42 @@ function initializ(){
     
                              }
 
+
+// ##########################################################
+// ##################        ERASE     ######################
+// ##########################################################
+
+
     function erase(){
 
         monTxtZone.textContent="";
         
                      }
 
-
+// ##########################################################
+// ##################        STRINGIFY     ##################
+// ##########################################################
 
      function stringify(){
-
-                       this.toString();
+                              this.toString();
                           }
+
+                          // ##########################################################
+// ##################        STRINGIFY     ##################
+// ##########################################################
+
+function disDble(i){
+
+	let iChar = i.toString();
+
+	display.textContent+=" --- Possibilité d'espaces doubles en 
+position : " + iChar;
+
+newPhrase[i]="Possibilité de signes doubles en position i";
+		 console.log(i, newPhrase[i]);
+        
+
+}
 
 
 
@@ -155,20 +179,6 @@ for (let i= 0; i<=long;i++)
 // let myProto= Object.getPrototypeOf(string2);
 // 
 // console.log("myProto",myProto);
-
-
-function disDble(i){
-
-	let iChar = i.toString();
-
-	display.textContent+=" --- Possibilité d'espaces doubles en position : " + iChar;
-
-newPhrase[i]="Possibilité de CHAR doubles en position i";
-		 console.log(i, newPhrase[i]);
-        
-
-}
-
 
 //let stringTrim=string2.trim();
 
